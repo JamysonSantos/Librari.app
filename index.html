@@ -52,6 +52,10 @@
             z-index: 1001;
         }
 
+        .menu-btn.hide {
+            display: none;
+        }
+
         /* Menu lateral oculto */
         .menu-popup {
             position: fixed;
@@ -171,7 +175,7 @@
 
     <header>
         <img src="logo03.png" alt="Librari">
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</button>
     </header>
 
     <!-- Fundo escurecido -->
@@ -224,8 +228,13 @@
     <!-- JavaScript -->
     <script>
         function toggleMenu() {
-            document.getElementById('menuPopup').classList.toggle('active');
-            document.getElementById('menuOverlay').classList.toggle('active');
+            const menu = document.getElementById('menuPopup');
+            const overlay = document.getElementById('menuOverlay');
+            const menuBtn = document.getElementById('menuBtn');
+
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuBtn.classList.toggle('hide');
         }
     </script>
 
