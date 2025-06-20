@@ -14,7 +14,7 @@
 
     <style>
         :root {
-            --cor-primaria: #0F3D2E; /* Verde muito escuro */
+            --cor-primaria: #0F3D2E;
             --cor-secundaria: #7DC4B2;
             --cor-fundo: #FFFFFF;
             --cor-texto: #333333;
@@ -32,14 +32,21 @@
         header {
             background-color: var(--cor-primaria);
             color: white;
-            padding: 5px 30px;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         header img {
-            height: 80px; /* Logo aumentada */
+            height: 80px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
         }
 
         nav a {
@@ -64,6 +71,7 @@
             text-align: center;
             color: var(--cor-primaria);
             margin-bottom: 30px;
+            font-size: 28px;
         }
 
         .card-grid {
@@ -119,6 +127,36 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* 🔸 Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .card-content h3 {
+                font-size: 16px;
+            }
+
+            .card-content p {
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 
@@ -173,3 +211,4 @@
 </body>
 
 </html>
+
