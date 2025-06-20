@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librari</title>
+
+    <style>
+        /* Paleta Librari */
+        :root {
+            --cor-primaria: #2CA36A;
+            --cor-secundaria: #7DC4B2;
+            --cor-fundo: #FFFFFF;
+            --cor-texto: #333333;
+            --cor-hover: #CFF0E5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--cor-primaria);
+            margin-bottom: 30px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 2px solid var(--cor-secundaria);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: var(--cor-hover);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: var(--cor-primaria);
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--cor-texto);
+        }
+
+        footer {
+            background-color: var(--cor-primaria);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Librari 📚</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="frases.html">Frases</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Livros Disponíveis</h2>
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <div class="card" onclick="window.location.href='arte-da-guerra.html'">
+                <img src="https://via.placeholder.com/300x150?text=A+Arte+da+Guerra" alt="A Arte da Guerra">
+                <div class="card-content">
+                    <h3>A Arte da Guerra</h3>
+                    <p>Sun Tzu | Estratégia e Sabedoria</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" onclick="window.location.href='sherlock-holmes.html'">
+                <img src="https://via.placeholder.com/300x150?text=Sherlock+Holmes" alt="Sherlock Holmes">
+                <div class="card-content">
+                    <h3>As Aventuras de Sherlock Holmes</h3>
+                    <p>Arthur Conan Doyle | Mistério e Inteligência</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" onclick="window.location.href='o-principe.html'">
+                <img src="https://via.placeholder.com/300x150?text=O+Pr%C3%ADncipe" alt="O Príncipe">
+                <div class="card-content">
+                    <h3>O Príncipe</h3>
+                    <p>Nicolau Maquiavel | Poder e Liderança</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Librari © 2024 – Todos os direitos reservados
+    </footer>
+
+</body>
+</html>
