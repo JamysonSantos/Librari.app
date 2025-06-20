@@ -36,28 +36,49 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
         }
 
         header img {
             height: 80px;
         }
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        nav a {
+        /* Botão Menu */
+        .menu-btn {
+            font-size: 30px;
+            background: none;
+            border: none;
             color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
+            cursor: pointer;
         }
 
-        nav a:hover {
+        /* Estilo do Menu Popup */
+        .menu-popup {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: var(--cor-primaria);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: right 0.3s ease-in-out;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-popup.active {
+            right: 0;
+        }
+
+        .menu-popup a {
+            color: white;
+            margin: 15px 0;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu-popup a:hover {
             text-decoration: underline;
         }
 
@@ -127,36 +148,6 @@
             bottom: 0;
             width: 100%;
         }
-
-        /* 🔸 Responsividade */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav {
-                flex-direction: column;
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            nav a {
-                margin: 5px 0;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .card-content h3 {
-                font-size: 16px;
-            }
-
-            .card-content p {
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 
@@ -164,13 +155,16 @@
 
     <header>
         <img src="logo03.png" alt="Librari">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="frases.html">Frases</a>
-            <a href="downloads.html">Downloads</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </header>
+
+    <!-- Menu Popup -->
+    <div class="menu-popup" id="menuPopup">
+        <a href="index.html">Home</a>
+        <a href="frases.html">Frases</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="sobre.html">Sobre</a>
+    </div>
 
     <main>
         <h2>Livros Disponíveis</h2>
@@ -207,6 +201,13 @@
     <footer>
         Librari © 2024 – Todos os direitos reservados
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('menuPopup').classList.toggle('active');
+        }
+    </script>
 
 </body>
 
